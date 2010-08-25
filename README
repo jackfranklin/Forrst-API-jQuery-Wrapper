@@ -2,6 +2,10 @@ This is the first jQuery wrapper for the Forrst API. The Forrst API is currently
 
 For instructions on how to use it, see the Homepage: jackfranklin.co.uk/forrst_api/demo.html.
 
+I owe many thanks to these people on Twitter:
+@KyleBragger for putting up with my email questions (and creating the API)
+@46bit for helping me get lots of it working and solving issues
+
 Any problems you can grab me on:
 Twitter: @Jack_Franklin
 Forrst: jackfranklin
@@ -49,3 +53,57 @@ The Callback:
 			//If data could not be fetched, this contains the error message explaining what went wrong. 
 			//If debugMode is set to TRUE, this contains an array detailing the issues.
 		var success //this is a boolean. If posts have been successfully retrieved, it is set to TRUE. If they could not be fetched, this is FALSE.
+
+
+The posts object:
+
+I suspect this will be documented when the Forrst API is more polished, but for now here's my attempt at explaining it.
+
+
+comment_count [INT] //number of comments the item has received
+		content [STR] //content of the post
+		created_at [TIME] //date the post was crated
+		current_user_likes_this [BOO] // 
+		description [STR] //description of the post
+		faved_by_current_user [BOO] // 
+		formated_content [STR] //the content of the post formatted (carriage returns, etc)
+		id [INT] // id of the post
+		images [OBJ] // Object containing the following items (images used in post)
+			images.large [STR] // URL to large version of the image
+			images.medium [STR] // URL to medium version of the image
+			images.mega [STR] // URL to super-large version of the image
+			images.original [STR] // URL to original version of the image
+			images.small [STR] // URL to small version of the image
+			images.thumb [STR] // URL to thumbnail version of the image
+		in_reply_to_post_id [INT] // id of the post that this post was posted in reply to
+		is_public [INT] // 1 = true, 0 = false. Is the post publicly viewable?
+		like_count [INT] //how many likes the post has
+		markdown_content [STR] // markdown version of the content
+		markdown_description [STR] //markdown version of the description
+		original_post_id [INT] //id of the original post
+		page_title [STR] //title of the page
+		phrase [STR] // phrase used for the post (eg "a snap")
+		post_type [STR] // type of post (eg "snap")
+		post_url [STR] //URL to post (excluding domain)
+		reply_key [STR] //Used in reply_url - unique token to authorise a reply.
+		reply_url [STR] //URL to reply to the post (excluding domain)
+		short_url_redirects // How many times the post has been accessed via its short URL
+		slug [STR] // slug version of the post title
+		snap_content_type [STR] //type of the snap (eg "image/png")
+		snap_file_name [STR] //file name 
+		snap_file_size [INT] //file size
+		tag_objs [OBJ] //Object containing all the tags, which each have their own object:
+			//Each object within tab_objs is named as an integer from 0 (eg 0,1,2)
+			id [INT] //id of the tag
+			name [STR] //name of the tag 
+			posts_url [STR] // URL to the tag (excluding domain) eg /tags/posts?t=yourtag
+		tag_string [STR] // string representing the tag 
+		tags [OBJ] // each tag coupled with its ID like so
+			tagid : tagname (eg: 8459 : "streakly")
+		tiny_id [STR] //tiny id of the post, used for short urls
+		title [STR] //title of the post
+		updated_at [TIME] // time post was last updated
+		url [STR] //the post URL (for "link" post types)
+		url_with_wbr [STR] //post URL with &lt;wbr /&gt; inserted to prevent wrapping on long URLs
+		user_id [INT] //id of user who posted it
+		views [INT] //number of views the post has recieved
