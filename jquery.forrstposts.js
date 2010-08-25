@@ -62,5 +62,68 @@ jQuery.extend({
 				}
 
 			})
+	},
+	forrstUserInfo: function(options) {
+		var defaults = {
+			username: 'kyle',
+			userId: null,
+			apiVersion: 'v1',
+			debugMode: false,
+			cantFetchInfo: 'We had an issue getting in touch with Forrst',
+			invalidData: 'The data you passed in was incorrect',
+			callback: function() {}
+		}
+		var options = $.extend({}, defaults, options);
+		var script = 'http://api.forrst.com/api/' + options.apiVersion + '/users/info?',
+			dataReturned, getId,success;
+		
+		if(options.username === null)
+		{
+			getId = false;
+			script += 'id=' + options.userId;
+		} else {
+			getId = true;
+			script += 'username=' + options.username;
+		}
+	
+		$.ajax({
+			url: script,
+			type: 'GET',
+			dataType: 'jsonp',
+			success: function(d) {
+				
+				if(getId)
+				{
+					
+					dataReturned = d.resp.user.id;
+				} else {
+					dataReturned = d.resp.user.username;
+				}
+				success = true;
+
+			},
+			error:function(req,status,error) {
+				if(options.debugMode)
+				{
+					dataReturned = new Array(req, status, error);
+				} else {
+					dataReturned = options.cantFetchInfo;
+				}
+				success = false;
+
+			},
+			complete: function() 
+			{
+				
+				if(dataReturned === null)
+				{
+					dataReturned = options.invalidData;
+					success = false;
+				}
+	
+				options.callback(dataReturned, success);
+
+			}
+		})
 	}
 })
