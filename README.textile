@@ -136,7 +136,7 @@ comment_count [INT] //number of comments the item has received
 		user_id [INT] //id of user who posted it
 		views [INT] //number of views the post has recieved
 
-notextile.</code></pre>
+notextile. </code></pre>
 
 
 
