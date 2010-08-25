@@ -1,0 +1,8 @@
+This is the first jQuery wrapper for the Forrst API. The Forrst API is currently very new and as such not much functionality is in place. Currently this wrapper will allow you to get a user's posts however as more is added to the API the plugin will replicate it.
+
+For instructions on how to use it, see the Homepage: jackfranklin.co.uk/forrst_api/demo.html.
+
+Any problems you can grab me on:
+Twitter: @Jack_Franklin
+Forrst: jackfranklin
+Skype: jack_franklin
