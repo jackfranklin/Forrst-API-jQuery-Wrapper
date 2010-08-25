@@ -9,7 +9,9 @@ jQuery.extend({
 			lastid: null,
 			debugMode: false,
 			callback: function() {},
-			apiVersion: 'v1'
+			apiVersion: 'v1',
+			cantFetchPosts: 'Sorry, there has been a problem fetching information from Forrst.',
+			fetchedError: 'We managed to interact with Forrst but all of your posts are set to private, so we cannot display them here.'
 
 		};
 	  	var options = $.extend({},defaults, options);
@@ -43,7 +45,7 @@ jQuery.extend({
 					{
 						dataReturned = new Array(req, status, error);
 					} else {
-						dataReturned = 'Sorry, there has been a problem fetching information from Forrst.'
+						dataReturned = options.cantFetchPosts;
 					}
 					success = false;
 
@@ -52,7 +54,7 @@ jQuery.extend({
 				{
 					if(dataReturned.length < 1)
 					{
-						dataReturned = 'We managed to interact with Forrst but all of your posts are set to private, so we cannot display them here.'
+						dataReturned = options.fetchedError;
 						success = false;
 					}
 					options.callback(dataReturned, success);
