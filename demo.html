@@ -63,7 +63,12 @@
 		lastid: null, //see below for an explanation
 		debugMode: false, //if you are having issues turn this to true, it outputs an array of errors.
 		callback: function() {}, //a function to run once the data is retrieved [REQUIRED]
-		apiVersion: 'v1' //version of the API - used incase Forrst suddenly change their version.
+		apiVersion: 'v1', //version of the API - used incase Forrst suddenly change their version.
+		cantFetchPosts: 'Sorry, there has been a problem fetching information from Forrst.'
+						//the error message shown if there was an issue with Forrst.
+		fetchedError: 'We managed to interact with Forrst but all of your posts are set to private, so we cannot display them here.'
+						//error shown if Forrst was contacted but no data was returned. 
+						//Usually this is due to posts being set as private.
 	</code></pre>
 	<h5>Since &amp; Last Id</h5>
 	<pre><code>
