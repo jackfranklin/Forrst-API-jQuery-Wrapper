@@ -63,11 +63,15 @@ jQuery.extend({
 				},
 				complete: function() 
 				{
-					if(dataReturned.length < 1)
+					if($.isArray(dataReturned))
 					{
-						dataReturned = options.fetchedError;
-						success = false;
+							if(dataReturned.length < 1)
+							{
+								dataReturned = options.fetchedError;
+								success = false;
+							}
 					}
+				
 					options.callback(dataReturned, success);
 
 				}
