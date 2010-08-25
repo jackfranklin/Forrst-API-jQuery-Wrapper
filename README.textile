@@ -49,7 +49,7 @@ notextile. <pre><code>
 						//error shown if Forrst was contacted but no data was returned. 
 						//Usually this is due to posts being set as private.
 
-
+notextile. </code></pre>
 
 Example:
 	$.forrstPosts({
