@@ -21,17 +21,19 @@ p. If you want to fork this please do and make your edits. Also, let me hear abo
 
 
 
--------------
+*-------------
 REMEMBER TO INCLUDE jQUERY FIRST!
---------------
-
-Currently two methods are available to you:
+--------------*
 
 
+h3. Currently two methods are available to you:
 
-$.forrstPosts():
 
-Options:
+
+h4. $.forrstPosts():
+
+h5. Options:
+@
 //The values of each variable are the defaults
 		username: 'kyle', //your forrst username [REQUIRED]
 		count: 5, //number of posts you want to retrieve, cannot be more than 10 [REQUIRED]
@@ -45,7 +47,7 @@ Options:
 		fetchedError: 'We managed to interact with Forrst but all of your posts are set to private, so we cannot display them here.'
 						//error shown if Forrst was contacted but no data was returned. 
 						//Usually this is due to posts being set as private.
-
+@
 
 Example:
 	$.forrstPosts({
