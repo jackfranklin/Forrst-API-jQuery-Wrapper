@@ -34,6 +34,7 @@ h4. $.forrstPosts():
 
 h5. Options:
 
+notextile. <pre><code>
 //The values of each variable are the defaults
 		username: 'kyle', //your forrst username [REQUIRED]
 		count: 5, //number of posts you want to retrieve, cannot be more than 10 [REQUIRED]
@@ -48,6 +49,7 @@ h5. Options:
 						//error shown if Forrst was contacted but no data was returned. 
 						//Usually this is due to posts being set as private.
 
+notextile.</code></pre>
 
 Example:
 	$.forrstPosts({
