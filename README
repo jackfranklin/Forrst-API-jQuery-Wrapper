@@ -25,3 +25,27 @@ Options:
 		fetchedError: 'We managed to interact with Forrst but all of your posts are set to private, so we cannot display them here.'
 						//error shown if Forrst was contacted but no data was returned. 
 						//Usually this is due to posts being set as private.
+
+
+Example:
+	$.forrstPosts({
+			'username':'kyle',
+			'count':5,
+			callback:function(data, success) {
+				if(success)
+				{
+					$.each(data, function(index, val) {
+					  //here 'val' refers to each post
+					 //this is where you can access the object and do with what you please
+					});
+				}
+			}
+		})
+
+
+The Callback:
+	function(data, success)
+		var data //if successful, this contains an array of objects, one per post. The number is whatever you set 'count' as.
+			//If data could not be fetched, this contains the error message explaining what went wrong. 
+			//If debugMode is set to TRUE, this contains an array detailing the issues.
+		var success //this is a boolean. If posts have been successfully retrieved, it is set to TRUE. If they could not be fetched, this is FALSE.
