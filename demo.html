@@ -123,9 +123,9 @@
 		phrase [STR] // phrase used for the post (eg "a snap")
 		post_type [STR] // type of post (eg "snap")
 		post_url [STR] //URL to post (excluding domain)
-		reply_key [STR] //Reply Key *Waiting clarification on this
+		reply_key [STR] //Used in reply_url - unique token to authorise a reply.
 		reply_url [STR] //URL to reply to the post (excluding domain)
-		short_url_redirects // *Waiting clarification
+		short_url_redirects // How many times the post has been accessed via its short URL
 		slug [STR] // slug version of the post title
 		snap_content_type [STR] //type of the snap (eg "image/png")
 		snap_file_name [STR] //file name 
@@ -141,8 +141,8 @@
 		tiny_id [STR] //tiny id of the post, used for short urls
 		title [STR] //title of the post
 		updated_at [TIME] // time post was last updated
-		url [STR] //*awaiting clarification. Currently just seems to be "http://"
-		url_with_wbr [STR] //*awaiting clarification
+		url [STR] //the post URL (for "link" post types)
+		url_with_wbr [STR] //post URL with &lt;wbr /&gt; inserted to prevent wrapping on long URLs
 		user_id [INT] //id of user who posted it
 		views [INT] //number of views the post has recieved
 		
