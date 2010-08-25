@@ -1,3 +1,14 @@
+/*
+Author: Jack Franklin
+HomePage: http://github.com/jackfranklin/Forrst-API-jQuery-Wrapper
+License: Released under the CC Share-Alike license: http://creativecommons.org/licenses/by-sa/3.0/
+version: v1
+
+
+
+
+*/
+
 jQuery.extend({
 	
 	forrstPosts: function(options)
