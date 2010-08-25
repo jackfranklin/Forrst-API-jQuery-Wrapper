@@ -52,6 +52,7 @@ notextile. <pre><code>
 notextile. </code></pre>
 
 h5. Example:
+
 notextile. <pre><code>
 	$.forrstPosts({
 			'username':'kyle',
@@ -66,6 +67,7 @@ notextile. <pre><code>
 				}
 			}
 		})
+
 notextile. </code></pre>
 
 h5. The Callback:
@@ -76,6 +78,7 @@ notextile. <pre><code>
 			//If data could not be fetched, this contains the error message explaining what went wrong. 
 			//If debugMode is set to TRUE, this contains an array detailing the issues.
 		var success //this is a boolean. If posts have been successfully retrieved, it is set to TRUE. If they could not be fetched, this is FALSE.
+
 notextile. </code></pre>
 
 
