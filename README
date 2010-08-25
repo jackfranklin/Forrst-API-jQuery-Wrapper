@@ -75,9 +75,9 @@ I suspect this will be documented when the Forrst API is more polished, but for 
 comment_count [INT] //number of comments the item has received
 		content [STR] //content of the post
 		created_at [TIME] //date the post was crated
-		current_user_likes_this [BOO] // 
+		current_user_likes_this [BOO] // not in use right now
 		description [STR] //description of the post
-		faved_by_current_user [BOO] // 
+		faved_by_current_user [BOO] // not in use right now
 		formated_content [STR] //the content of the post formatted (carriage returns, etc)
 		id [INT] // id of the post
 		images [OBJ] // Object containing the following items (images used in post)
