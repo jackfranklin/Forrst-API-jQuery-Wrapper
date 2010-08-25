@@ -51,7 +51,8 @@ notextile. <pre><code>
 
 notextile. </code></pre>
 
-Example:
+h5. Example:
+notextile. <pre><code>
 	$.forrstPosts({
 			'username':'kyle',
 			'count':5,
@@ -65,19 +66,22 @@ Example:
 				}
 			}
 		})
+notextile. </code></pre>
 
+h5. The Callback:
 
-The Callback:
+notextile. <pre><code>
 	function(data, success)
 		var data //if successful, this contains an array of objects, one per post. The number is whatever you set 'count' as.
 			//If data could not be fetched, this contains the error message explaining what went wrong. 
 			//If debugMode is set to TRUE, this contains an array detailing the issues.
 		var success //this is a boolean. If posts have been successfully retrieved, it is set to TRUE. If they could not be fetched, this is FALSE.
+notextile. </code></pre>
 
 
-The posts object:
+h5. The posts object:
 
-I suspect this will be documented when the Forrst API is more polished, but for now here's my attempt at explaining it.
+_I suspect this will be documented when the Forrst API is more polished, but for now here's my attempt at explaining it._
 
 
 comment_count [INT] //number of comments the item has received
