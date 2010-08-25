@@ -138,6 +138,9 @@ invalidData: 'The data you passed in was incorrect',
 		//error if the data you passed is wrong
 callback: function() {} //function to handle the data
 
+Please note - if you pass in both the username and the ID, it will not work. Doing that will break the internet, just like when you google 'google'. Don't even risk it.
+
+
 Examples:
 
 Fetching a username from ID:

@@ -4,13 +4,17 @@ HomePage: http://github.com/jackfranklin/Forrst-API-jQuery-Wrapper
 License: Released under the CC Share-Alike license: http://creativecommons.org/licenses/by-sa/3.0/
 version: v1
 
+Thanks for looking at the source code! Half of what I know came from looking at code so feel free to have a good old look around! If you want to make any edits, please fork it on Github. And if you have any questions, Skype: jack_franklin.
 
-
-
+For more information about the functions and parameters, please view the Github home page and read the README. You can't miss it. There's all the information you need, right there in that file.
 */
 
 jQuery.extend({
 	
+	/*
+		usage: $.forrstPosts({})
+		Used to get the user's recent posts, up to a limit of 10.
+	*/
 	forrstPosts: function(options)
 	{
 		var defaults = {
@@ -78,6 +82,12 @@ jQuery.extend({
 
 			})
 	},
+	/*
+		usage: $.forrstUserInfo({})
+		Give it a forrst username and it will tell you that member's ID
+		Give it a forrst ID and it will tell you that member's username.
+	*/
+	
 	forrstUserInfo: function(options) {
 		var defaults = {
 			username: 'kyle',
