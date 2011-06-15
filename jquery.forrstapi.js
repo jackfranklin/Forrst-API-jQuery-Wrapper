@@ -2,7 +2,7 @@
 Author: Jack Franklin
 HomePage: http://github.com/jackfranklin/Forrst-API-jQuery-Wrapper
 License: Released under the CC Share-Alike license: http://creativecommons.org/licenses/by-sa/3.0/
-version: v1
+version: v2
 
 Thanks for looking at the source code! Half of what I know came from looking at code so feel free to have a good old look around! If you want to make any edits, please fork it on Github. And if you have any questions, Skype: jack_franklin.
 
