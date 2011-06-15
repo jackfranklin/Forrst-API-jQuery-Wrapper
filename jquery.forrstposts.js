@@ -12,15 +12,18 @@ For more information about the functions and parameters, please view the Github 
 
 jQuery.extend({
 
-    forrstApi: function(method,params,options) {
+    forrstApi: function(method,callback,params,options) {
+
+        
         var defaults = {
             apiVersion: 'v2',
             debugMode: false,
             url: 'http://forrst.com/api/v2/'
         },
         
+        callback = callback || undefined,
+        params = params || undefined,
         options = $.extend({}, defaults, options),
-        
         
         methods = {
             
@@ -29,22 +32,78 @@ jQuery.extend({
                     url: options.url + 'stats/',
                     dataType: 'jsonp',
                     success: function(d) {
-                        console.log(d);
+                        callback(d);
                     }
                 });
-            }
+            },
+
+            userinfo: function() {
+                $.ajax({
+                    url: options.url+"users/info/?" + jQuery.param(params),
+                    dataType: 'jsonp',
+                    success: function(d) {
+                        callback(d);
+                    }
+                });
+            },
+
+            userposts: function() {
+                $.ajax({
+                    url: options.url+"users/posts/?" + jQuery.param(params),
+                    dataType: 'jsonp',
+                    success: function(d) {
+                        callback(d);
+                    }
+                });
+            },
+            
+            postsshow: function() {
+                $.ajax({
+                    url: options.url+"posts/show/?" + jQuery.param(params),
+                    dataType: 'jsonp',
+                    success: function(d) {
+                        callback(d);
+                    }
+                })
+            },
+            postsall: function() {
+                $.ajax({
+                    url: options.url+"posts/all/?" + jQuery.param(params),
+                    dataType: 'jsonp',
+                    success: function(d) {
+                        callback(d);
+                    }
+                })
+            },
+            postslist: function() {
+                $.ajax({
+                    url: options.url+"posts/list/?" + jQuery.param(params),
+                    dataType: 'jsonp',
+                    success: function(d) {
+                        callback(d);
+                    }
+                })
+            },
+            
+            postcomments: function() {
+                $.ajax({
+                    url: options.url+"post/comments/?" + jQuery.param(params),
+                    dataType: 'jsonp',
+                    success: function(d) {
+                        callback(d)
+                    }
+                })
+            };
 
                        
 
 
         };
-
         if(typeof methods[method] == 'function') {
-            if(params===undefined) {
-                methods[method]();
-            } else {
-                methods[method](params);
-            }
+            methods[method](); 
         };
+
+        
     }
+    
 });
