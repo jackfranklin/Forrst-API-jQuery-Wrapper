@@ -22,7 +22,8 @@ jQuery.extend({
         },
         
         callback = callback || undefined,
-        params = jQuery.param(params) || "",
+        params = (params===undefined ? {} : params),
+        params = jQuery.param(params),
         options = $.extend({}, defaults, options),
         
         methods = {
@@ -81,16 +82,6 @@ jQuery.extend({
                     dataType: 'jsonp',
                     success: function(d) {
                         callback(d);
-                    }
-                })
-            },
-            
-            postcomments: function() {
-                $.ajax({
-                    url: options.url+"post/comments/?" + params,
-                    dataType: 'jsonp',
-                    success: function(d) {
-                        callback(d)
                     }
                 })
             }
