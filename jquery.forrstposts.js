@@ -22,7 +22,7 @@ jQuery.extend({
         },
         
         callback = callback || undefined,
-        params = params || undefined,
+        params = jQuery.param(params) || "",
         options = $.extend({}, defaults, options),
         
         methods = {
@@ -37,9 +37,9 @@ jQuery.extend({
                 });
             },
 
-            userinfo: function() {
+            usersinfo: function() {
                 $.ajax({
-                    url: options.url+"users/info/?" + jQuery.param(params),
+                    url: options.url+"users/info/?" + params,
                     dataType: 'jsonp',
                     success: function(d) {
                         callback(d);
@@ -49,7 +49,7 @@ jQuery.extend({
 
             userposts: function() {
                 $.ajax({
-                    url: options.url+"users/posts/?" + jQuery.param(params),
+                    url: options.url+"users/posts/?" + params,
                     dataType: 'jsonp',
                     success: function(d) {
                         callback(d);
@@ -59,7 +59,7 @@ jQuery.extend({
             
             postsshow: function() {
                 $.ajax({
-                    url: options.url+"posts/show/?" + jQuery.param(params),
+                    url: options.url+"posts/show/?" + params,
                     dataType: 'jsonp',
                     success: function(d) {
                         callback(d);
@@ -68,7 +68,7 @@ jQuery.extend({
             },
             postsall: function() {
                 $.ajax({
-                    url: options.url+"posts/all/?" + jQuery.param(params),
+                    url: options.url+"posts/all/?" + params,
                     dataType: 'jsonp',
                     success: function(d) {
                         callback(d);
@@ -77,7 +77,7 @@ jQuery.extend({
             },
             postslist: function() {
                 $.ajax({
-                    url: options.url+"posts/list/?" + jQuery.param(params),
+                    url: options.url+"posts/list/?" + params,
                     dataType: 'jsonp',
                     success: function(d) {
                         callback(d);
@@ -87,13 +87,13 @@ jQuery.extend({
             
             postcomments: function() {
                 $.ajax({
-                    url: options.url+"post/comments/?" + jQuery.param(params),
+                    url: options.url+"post/comments/?" + params,
                     dataType: 'jsonp',
                     success: function(d) {
                         callback(d)
                     }
                 })
-            };
+            }
 
                        
 
